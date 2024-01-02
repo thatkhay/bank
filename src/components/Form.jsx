@@ -2,7 +2,7 @@ import React from "react";
 
 const Form = () => {
   return (
-    <form className="max-w-[50rem] sm:w-[100%] xsm:w-[100%] lg:w-auto md:w-auto  p-4 lg:items-start md:items-start xsm:items-center sm:items-center shadow-2xl">
+    <form className="max-w-[50rem] sm:w-[100%] xsm:w-[100%] lg:w-auto md:w-auto  p-4 lg:items-start md:items-start xsm:items-center sm:items-center shadow-2xl xsm:hidden sm:hidden lg:block md:block">
       <div className="flex items-center justify-between xsm:flex-col sm:flex-col md:flex-row lg:flex-row ">
         <div className="flex flex-col mr-2">
           <label htmlFor="">Email</label>

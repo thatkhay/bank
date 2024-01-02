@@ -11,12 +11,15 @@ const HomePage = () => {
         <img src={logo} alt="logo" />
         <ul className="flex justify-between  w-[10rem] ">
           <li className=" text-[.7rem] flex items-center flex-col">
-            <img src={location} alt="" />
+            <img src={location} alt="location" />
             <p className=" text-[.7rem] ">ATM/BRANCH</p>
           </li>
-          <li className="text-[.7rem] flex items-center flex-col">
-            <img src={globe} alt="" />
+          <li className="text-[.7rem] flex items-center flex-col xsm:hidden sm:hidden lg:block md:block">
+            <img src={globe} alt="globe" />
             <p className=" text-[.7rem] ">ESPANYOL</p>
+          </li>
+            <li className=" bg-slate-400 px-4 flex items-center mt-4 xsm:block sm:block lg:hidden md:hidden">
+            <p className=" text-[.9rem] font-bold text-blue-900 ">Login</p>
           </li>
         </ul>
       </nav>
