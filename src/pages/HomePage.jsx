@@ -1,77 +1,75 @@
-import React from 'react'
-import Logo from '../images/citi-logo.svg'
-import Cards from '../images/cards.png'
-import { Container } from '@mui/material'
-
+import React from "react";
+import logo from "../images/citi-logo.svg";
+import location from "../images/location.svg";
+import globe from "../images/globe.svg";
+import card from "../images/cards.jpg";
+import Form from "../components/Form";
 const HomePage = () => {
-    const navList = ['Credit Card', 'Banking', 'Lending', 'Investing', 'Wealth Management', 'Open Account']
   return (
-    <div >
-    <div  style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '.5rem 3rem'}}>
-        <div>
-         <img src={Logo} alt="citi-logo" />
+    <div className="container max-w-full flex items-center flex-col ">
+      <nav className=" max-w-full w-[90%] flex justify-between items-center  px-4">
+        <img src={logo} alt="logo" />
+        <ul className="flex justify-between  w-[10rem] ">
+          <li className=" text-[.7rem] flex items-center flex-col">
+            <img src={location} alt="" />
+            <p className=" text-[.7rem] ">ATM/BRANCH</p>
+          </li>
+          <li className="text-[.7rem] flex items-center flex-col">
+            <img src={globe} alt="" />
+            <p className=" text-[.7rem] ">ESPANYOL</p>
+          </li>
+        </ul>
+      </nav>
+      <main className="flex items-center flex-col mt-4 w-[100%]">
+        <div className="flex items-center  h-[3rem] mt-4  w-[100%] px-8 bg-slate-200 shadow-md xsm:hidden sm:hidden lg:block md:block">
+          <div className="flex justify-between items-center  w-full px-8">
+            <ul className="flex items-center justify-between w-[80%]  h-[3rem] px-8">
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
+                Credict card
+              </li>
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">Banking</li>
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">Lending</li>
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
+                Investment
+              </li>
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
+                Wealth Management
+              </li>
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
+                Open account {">"}
+              </li>
+            </ul>
+            <ul className="flex items-center justify-between h-[3rem]">
+              <img src="" alt="" />
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
+                How can we help ?
+              </li>
+            </ul>
+          </div>
         </div>
-      
-        <div style={{display: 'flex', width: '15rem', justifyContent: 'space-between'}}>
-        <h3 style={{fontWeight: 'lighter', color: 'gray', fontSize: '1rem' }}>ATM / BRANCH</h3>
-        <h3 style={{fontWeight: 'lighter', color: 'gray', fontSize: '1rem' }}>ESPANYOL</h3>
+        <div className="flex items-center justify-between xsm:flex-col-reverse sm:flex-col-reverse lg:flex-row md:flex-row w-[100%]  px-8 mt-8">
+          <div className="flex items-center xsm:flex-col-reverse sm:flex-col-reverse lg:flex-row md:flex-row">
+            <div>
+              <p className=" tracking-widest font-thin text-[1rem] text-gray-600 ">
+                CITI® CREDIT CARDS
+              </p>
+              <h2 className=" font-extrabold text-[2rem] max-w-[25rem] ">
+                Choose the right Citi® credit card for you
+              </h2>
+              <p className="max-w-[30rem]">
+                Whether you want Cash Back, Great Airline Miles, Rewards for
+                Costco Members, or a Low Intro Rate, the choice is all yours.
+              </p>
+
+              <button className="h-[3rem] w-[12rem] bg-blue-500 mt-8 rounded-[.6rem] text-white font-bold">Learn More</button>
+            </div>
+            <img src={card} alt="card" className="h-[12rem] max-w-[20rem]" />
+          </div>
+          <Form />
         </div>
-
-
+      </main>
     </div>
-   <div
-  style={{
-    backgroundColor: 'rgb(244, 269, 265)',
-    width: '100%',
-    height: '3rem',
-    boxShadow: '0 8px 6px -6px rgba(0, 0, 0, 0.1), 0 -8px 6px -6px rgba(0, 0, 0, 0.1)',
-    justifyContent: 'space-between', 
-    display: 'flex',
-     alignItems: 'center',
-   
-  }}
->
-    <ul style={{justifyContent: 'space-between', display: 'flex', alignItems: 'center',   width: '60%', listStyle: 'none'}}>
-        {navList.map((list, index) => (
-            <li key={index} style={{color: 'blue', fontSize: '1rem', fontWeight: 500, cursor: 'pointer'}}>{list}</li>
-        ))}
-       
-    </ul>
-     <p style={{color: 'blue',  fontWeight: 500, marginRight: '3rem'}}>How can we help?</p>
-</div>
-<Container style={{ display: 'flex', alignItems: 'center' , marginTop: '3rem' , justifyContent: 'space-between', width: '100%'}}>
-    <div style={{ marginLeft: '-5rem'}}>
- <p style={{ letterSpacing: '2px'}}>CITI<span>&reg;</span>  CREDIT CARDS</p>
- <p style={{ fontWeight: 700, width: '30rem' , fontSize: '2.7rem', marginTop: '-1rem'}}>Choose the right Citi® credit card for you</p>
- <p style={{width: '30rem', marginTop: '-1.5rem'}}>Whether you want Cash Back, Great Airline Miles, Rewards for Costco Members, or a Low Intro Rate, the choice is all yours.</p>
+  );
+};
 
- </div>
- <div>
-    <img src={Cards} alt=""  style={{height: '10rem', width: '20rem', marginLeft: '-10rem'}}/>
- </div>
-
- <div style={{ boxShadow: '0 8px 6px -6px rgba(0, 0, 0, 0.1), 0 -8px 6px -6px rgba(0, 0, 0, 0.1)', borderRadius: '.7rem', height: '18rem' , width: '25rem',  marginRight: '-6rem'}}> 
-<form action="" style={{padding: '1rem'}}>
-    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-     <label htmlFor="useId">User ID</label>
-    <input type="text" style={{height: '2.5rem', borderRadius: '5px', display: 'flex', alignItems: 'center', border: '1px solid gray'}}/>
-        </div>
-
-<div style={{ display: 'flex', flexDirection: 'column' }}>
-<label htmlFor="password">Password</label>
-    <input type="text" style={{height: '2.5rem', borderRadius: '5px', display: 'flex', alignItems: 'center', border: '1px solid gray'}}/>
-</div>
-    
-    </div>
-
-</form>
- </div>
-</Container>
-
-
-     </div>
-  )
-}
-
-export default HomePage
+export default HomePage;
