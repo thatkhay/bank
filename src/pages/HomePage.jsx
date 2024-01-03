@@ -70,6 +70,14 @@ const HomePage = () => {
           </div>
           <Form />
         </div>
+        <ul className="flex items-center justify-around h-[6rem] mt-8 w-[98%] px-8 border-[.04px] rounded-md border-gray-400 shadow-md xsm:hidden sm:hidden lg:flex md:flex">
+         <li className=" font-bold text-blue-900 text-[.8rem] ">Credit Cards</li>
+         <li className=" font-bold text-blue-900 text-[.8rem] ">Checking Solutions</li>
+         <li className=" font-bold text-blue-900 text-[.8rem] ">Mortgage</li>
+         <li className=" font-bold text-blue-900 text-[.8rem] ">Personal Loans</li>
+         <li className=" font-bold text-blue-900 text-[.8rem] ">Investing Options</li>
+         <li className=" font-bold text-blue-900 text-[.8rem] ">Small Business</li>
+        </ul>
       </main>
     </div>
   );
