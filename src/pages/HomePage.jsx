@@ -3,6 +3,9 @@ import logo from "../images/citi-logo.svg";
 import location from "../images/location.svg";
 import globe from "../images/globe.svg";
 import card from "../images/cards.jpg";
+import family1 from "../images/family.jpg";
+import family2 from "../images/family2.jpg";
+import multicard from "../images/multicard.jpg";
 import Form from "../components/Form";
 const HomePage = () => {
   return (
@@ -10,17 +13,18 @@ const HomePage = () => {
       <nav className=" max-w-full w-[90%] flex justify-between items-center  px-4">
         <img src={logo} alt="logo" />
         <ul className="flex justify-between  w-[10rem] ">
-          <li className=" text-[.7rem] flex items-center flex-col">
+          <li className=" text-[.7rem] flex items-center flex-col xsm:hidden sm:hidden lg:flex md:flex">
             <img src={location} alt="location" />
             <p className=" text-[.7rem] ">ATM/BRANCH</p>
           </li>
-          <li className="text-[.7rem] flex items-center flex-col xsm:hidden sm:hidden lg:block md:block">
+          <li className="text-[.7rem] flex items-center flex-col xsm:hidden sm:hidden lg:flex md:flex">
             <img src={globe} alt="globe" />
             <p className=" text-[.7rem] ">ESPANYOL</p>
           </li>
-            <li className=" bg-slate-400 px-4 flex items-center mt-4 xsm:block sm:block lg:hidden md:hidden">
-            <p className=" text-[.9rem] font-bold text-blue-900 ">Login</p>
-          </li>
+
+          <p className="text-[.9rem] font-bold items-center text-blue-900  pt-5 xsm:block sm:block lg:hidden md:hidden ml-24">
+            Login
+          </p>
         </ul>
       </nav>
       <main className="flex items-center flex-col mt-4 w-[100%]">
@@ -30,8 +34,12 @@ const HomePage = () => {
               <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
                 Credict card
               </li>
-              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">Banking</li>
-              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">Lending</li>
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
+                Banking
+              </li>
+              <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
+                Lending
+              </li>
               <li className="text-[.9rem] font-bold text-blue-900 cursor-pointer">
                 Investment
               </li>
@@ -64,20 +72,58 @@ const HomePage = () => {
                 Costco Members, or a Low Intro Rate, the choice is all yours.
               </p>
 
-              <button className="h-[3rem] w-[12rem] bg-blue-500 mt-8 rounded-[.6rem] text-white font-bold">Learn More</button>
+              <button className="h-[3rem] w-[12rem] bg-blue-500 mt-8 rounded-[.6rem] text-white font-bold">
+                Learn More
+              </button>
             </div>
             <img src={card} alt="card" className="h-[12rem] max-w-[20rem]" />
           </div>
           <Form />
         </div>
         <ul className="flex items-center justify-around h-[6rem] mt-8 w-[98%] px-8 border-[.04px] rounded-md border-gray-400 shadow-md xsm:hidden sm:hidden lg:flex md:flex">
-         <li className=" font-bold text-blue-900 text-[.8rem] ">Credit Cards</li>
-         <li className=" font-bold text-blue-900 text-[.8rem] ">Checking Solutions</li>
-         <li className=" font-bold text-blue-900 text-[.8rem] ">Mortgage</li>
-         <li className=" font-bold text-blue-900 text-[.8rem] ">Personal Loans</li>
-         <li className=" font-bold text-blue-900 text-[.8rem] ">Investing Options</li>
-         <li className=" font-bold text-blue-900 text-[.8rem] ">Small Business</li>
+          <li className=" font-bold text-blue-900 text-[.8rem] ">
+            Credit Cards
+          </li>
+          <li className=" font-bold text-blue-900 text-[.8rem] ">
+            Checking Solutions
+          </li>
+          <li className=" font-bold text-blue-900 text-[.8rem] ">Mortgage</li>
+          <li className=" font-bold text-blue-900 text-[.8rem] ">
+            Personal Loans
+          </li>
+          <li className=" font-bold text-blue-900 text-[.8rem] ">
+            Investing Options
+          </li>
+          <li className=" font-bold text-blue-900 text-[.8rem] ">
+            Small Business
+          </li>
         </ul>
+        <div className="flex items-center justify-between w-[100%] sm:flex-col xsm:flex-col md:flex-row lg:flex-row mt-10 p-8 gap-8">
+          <div className="mb-8 w-[33%]">
+             <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Simplified Banking</p>
+            <img src={family1} alt="family1" className=" max-w-[100%] "/>
+            <p>hjhjjh</p>
+            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold">
+              Learn More
+            </button>
+          </div>
+          <div className="mb-8 w-[33%]">
+             <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Simplify your savings</p>
+            <img src={family2} alt="" className=" max-w-[100%] rounded-lg"/>
+            <p>hjhjjh</p>
+            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold">
+              Learn More
+            </button>
+          </div>
+          <div className="mb-8 w-[33%]">
+             <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Explore Citi® / AAdvantage® Credit Cards</p>
+            <img src={multicard} alt="" className=" max-w-[100%] rounded-lg"/>
+            <p>hjhjjh</p>
+            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold">
+              Learn More
+            </button>
+          </div>
+        </div>
       </main>
     </div>
   );
