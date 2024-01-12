@@ -99,7 +99,7 @@ const HomePage = () => {
           </li>
         </ul>
         <div className="flex items-center justify-between w-[100%] sm:flex-col xsm:flex-col md:flex-row lg:flex-row mt-10 p-8 gap-8">
-          <div className="mb-8 w-[33%]">
+          <div className="mb-8 w-[33%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center">
              <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Simplified Banking</p>
             <img src={family1} alt="family1" className=" max-w-[100%] "/>
             <p>hjhjjh</p>
@@ -107,7 +107,7 @@ const HomePage = () => {
               Learn More
             </button>
           </div>
-          <div className="mb-8 w-[33%]">
+          <div className="mb-8 w-[33%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center">
              <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Simplify your savings</p>
             <img src={family2} alt="" className=" max-w-[100%] rounded-lg"/>
             <p>hjhjjh</p>
@@ -115,7 +115,7 @@ const HomePage = () => {
               Learn More
             </button>
           </div>
-          <div className="mb-8 w-[33%]">
+          <div className="mb-8 xsm:w-[33%] sm:w-[80%] md:w-[33%] lg:w-[33%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center">
              <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Explore Citi® / AAdvantage® Credit Cards</p>
             <img src={multicard} alt="" className=" max-w-[100%] rounded-lg"/>
             <p>hjhjjh</p>
