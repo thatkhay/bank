@@ -25,7 +25,7 @@ const Form = () => {
         <input type="checkbox" className=" h-6 w-6 mr-2 " />
         <p className=" text-[.8rem] ">Remember User ID</p>
       </div>
-      <button className=" w-[100%] items-center justify-center h-[3rem] bg-blue-500  rounded-[.6rem] text-white font-bold mt-6">
+      <button className=" w-[100%] items-center justify-center h-[3rem] bg-blue-500  rounded-[.6rem] text-white font-bold mt-6 hover:bg-blue-900">
         Sign On
       </button>
       <p className="text-[.8rem] text-center mt-4">forgot <span>UserID</span> or <span>Password</span></p>
