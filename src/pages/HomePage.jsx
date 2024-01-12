@@ -7,11 +7,14 @@ import family1 from "../images/family.jpg";
 import family2 from "../images/family2.jpg";
 import multicard from "../images/multicard.jpg";
 import secOneImg from "../images/secone.jpg";
+import secTwoImg from "../images/sectwo.jpg";
+import secThreeImg from "../images/secthree.jpg";
 import Form from "../components/Form";
+import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <div className="container max-w-full flex items-center flex-col ">
-      <nav className=" max-w-full w-[90%] flex justify-between items-center  px-4">
+      <nav className=" max-w-full w-[90%] flex justify-between items-center  px-4  lg:bg-transparent md:bg-transparent xsm:bg-slate-100 sm:bg-slate-200   mt-2">
         <img src={logo} alt="logo" />
         <ul className="flex justify-between  w-[10rem] ">
           <li className=" text-[.7rem] flex items-center flex-col xsm:hidden sm:hidden lg:flex md:flex">
@@ -22,10 +25,11 @@ const HomePage = () => {
             <img src={globe} alt="globe" />
             <p className=" text-[.7rem] ">ESPANYOL</p>
           </li>
-
-          <p className="text-[.9rem] font-bold items-center text-blue-900  pt-5 xsm:block sm:block lg:hidden md:hidden ml-24">
-            Login
-          </p>
+          <Link to="log-in">
+            <p className="text-[.9rem] font-extrabold items-center text-blue-900  pt-5 xsm:block sm:block lg:hidden md:hidden ml-24 hover:text-red-500">
+              Login
+            </p>
+          </Link>
         </ul>
       </nav>
       <main className="flex items-center flex-col mt-4 w-[100%]">
@@ -72,10 +76,11 @@ const HomePage = () => {
                 Whether you want Cash Back, Great Airline Miles, Rewards for
                 Costco Members, or a Low Intro Rate, the choice is all yours.
               </p>
-
-              <button className="h-[3rem] w-[12rem] bg-blue-500 mt-8 rounded-[.6rem] text-white font-bold hover:bg-blue-900">
-                Learn More
-              </button>
+              <Link to="/*">
+                <button className="h-[3rem] w-[12rem] bg-blue-500 mt-8 rounded-[.6rem] text-white font-bold hover:bg-blue-900">
+                  Learn More
+                </button>
+              </Link>
             </div>
             <img src={card} alt="card" className="h-[12rem] max-w-[20rem]" />
           </div>
@@ -102,7 +107,7 @@ const HomePage = () => {
           </li>
         </ul>
         <div className="flex items-center justify-between w-[100%] sm:flex-col xsm:flex-col md:flex-row lg:flex-row mt-10 p-8 gap-8">
-          <div className="mb-8   lg:w-[33%] md:w-auto xsm:w-[20rem] sm:w-[10rem] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md  hover:bg-slate-300">
+          <div className="mb-8   lg:w-[33%] md:w-[90%] xsm:w-[95%] sm:w-[95%]  flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md  hover:bg-slate-300">
             <p className=" font-bold text-blue-900 text-[.9rem] mb-4">
               Simplified Banking
             </p>
@@ -115,11 +120,13 @@ const HomePage = () => {
               Citi mobile banking allows you to manage your money and pay
               friends — all while on-the-go. Member FDIC.
             </p>
-            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
-              Learn More
-            </button>
+            <Link to="/*">
+              <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
+                Learn More
+              </button>
+            </Link>
           </div>
-          <div className="mb-8 lg:w-[33%] md:w-auto xsm:w-[20rem] sm:w-[10rem] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md  hover:bg-slate-300">
+          <div className="mb-8 lg:w-[33%] md:w-[90%] xsm:w-[95%] sm:w-[95%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md  hover:bg-slate-300">
             <p className=" font-bold text-blue-900 text-[.9rem] mb-4">
               Simplify your savings
             </p>
@@ -132,11 +139,14 @@ const HomePage = () => {
               24/7 access to digital tools and money transfers with security you
               can bank on. Member FDIC
             </p>
-            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
+            <Link to='/*'>
+             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
               Learn More
             </button>
+            </Link>
+           
           </div>
-          <div className="mb-8 lg:w-[33%] md:w-auto xsm:w-[20rem] sm:w-[10rem] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md hover:bg-slate-300 ">
+          <div className="mb-8 lg:w-[33%] md:w-[90%] xsm:w-[95%] sm:w-[95%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md hover:bg-slate-300 ">
             <p className=" font-bold text-blue-900 text-[.9rem] mb-4">
               Explore Citi® / AAdvantage® Credit Cards
             </p>
@@ -149,13 +159,15 @@ const HomePage = () => {
               Whether you're a frequent flyer or first—time passenger, Citi has
               an airline rewards credit card to meet your travel needs.
             </p>
-            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
+            <Link to='/*'>
+             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
               Learn More
             </button>
+            </Link>
           </div>
         </div>
-        <div className=" w-[90%] border-2  px-10 py-5 flex lg:flex-row md:flex-col sm:flex-col xsm:flex-col items-center mb-4 lg:border-none md:border-2 xsm:border-2 sm:border-2 border-black rounded-md">
-          <img src={secOneImg} alt="secOneImg" className=" rounded-lg "/>
+        <div className=" w-[100%] border-2  p-10 flex lg:flex-row md:flex-col sm:flex-col xsm:flex-col items-center mb-4 lg:border-none md:border-2 xsm:border-2 sm:border-2 rounded-md justify-around bg-blue-300">
+          <img src={secOneImg} alt="secOneImg" className=" rounded-lg " />
           <div>
             <p className=" tracking-widest font-thin text-[1rem] text-gray-600 ">
               LIFE AND MONEY BY CITI
@@ -163,47 +175,56 @@ const HomePage = () => {
             <h4 className="font-extrabold text-[2rem] max-w-[30rem] ">
               Closing the Racial Wealth Gap
             </h4>
-            <p>
+            <p className=" max-w-[30rem]">
               These are some keys to help create equitable pathways to income
               growth.
             </p>
-            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-8 ">
+            <Link to='/*' className="mt-4">
+             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
               Learn More
             </button>
+            </Link>
           </div>
         </div>
-        <div className=" w-[90%] border-2  px-10 py-5 flex lg:flex-row md:flex-col sm:flex-col xsm:flex-col  items-center mb-4 lg:border-none md:border-2 xsm:border-2 sm:border-2 border-black rounded-md">
+        <div className=" w-[100%] border-2  p-10 flex lg:flex-row md:flex-col sm:flex-col-reverse xsm:flex-col-reverse  items-center mb-4 lg:border-none md:border-2 xsm:border-2 sm:border-2 rounded-md justify-around bg-slate-200">
           <div>
             <p className=" tracking-widest font-thin text-[1rem] text-gray-600 ">
               CITI® CHECKING ACCOUNTS
             </p>
             <h4 className="font-extrabold text-[2rem] max-w-[30rem] ">
-             Unlock checking that grows with you
+              Unlock checking that grows with you
             </h4>
-            <p>
-             The higher your balances, the more benefits and services you can enjoy from Citi Relationship Tiers.
+            <p className=" max-w-[30rem]">
+              The higher your balances, the more benefits and services you can
+              enjoy from Citi Relationship Tiers.
             </p>
-            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-8 ">
+           <Link to='/*' className="mt-4">
+             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
               Learn More
             </button>
+            </Link>
           </div>
-          <img src="" alt="" className=" rounded-lg " />
+          <img src={secTwoImg} alt="secTwoImg" className=" rounded-lg " />
         </div>
-        <div className=" w-[90%] border-2  px-10 py-5 flex lg:flex-row md:flex-col sm:flex-col xsm:flex-col items-center mb-4 lg:border-none md:border-2 xsm:border-2 sm:border-2 border-black rounded-md ">
-          <img src="" alt="" className=" rounded-lg "/>
+        <div className=" w-[100%] border-2  p-10 flex lg:flex-row md:flex-col sm:flex-col xsm:flex-col items-center mb-4 lg:border-none md:border-2 xsm:border-2 sm:border-2 rounded-md justify-around">
+          <img src={secThreeImg} alt="secThreeImg" className=" rounded-lg " />
           <div>
             <p className=" tracking-widest font-thin text-[1rem] text-gray-600 ">
-             RACIAL EQUITY AT CITI
+              RACIAL EQUITY AT CITI
             </p>
             <h4 className="font-extrabold text-[2rem] max-w-[30rem] ">
-             Action for Racial Equity
+              Action for Racial Equity
             </h4>
-            <p>
-              We're marshaling the talent and capabilities of our institution like never before to help communities of color build wealth and strong financial futures.
+            <p className=" max-w-[30rem] ">
+              We're marshaling the talent and capabilities of our institution
+              like never before to help communities of color build wealth and
+              strong financial futures.
             </p>
-            <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-8 ">
+           <Link to='/*' className="mt-4">
+             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
               Learn More
             </button>
+            </Link>
           </div>
         </div>
       </main>
