@@ -99,26 +99,26 @@ const HomePage = () => {
           </li>
         </ul>
         <div className="flex items-center justify-between w-[100%] sm:flex-col xsm:flex-col md:flex-row lg:flex-row mt-10 p-8 gap-8">
-          <div className="mb-8 w-[33%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center">
+          <div className="mb-8   lg:w-[33%] md:w-auto xsm:w-[20rem] sm:w-[10rem] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md  hover:bg-slate-300">
              <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Simplified Banking</p>
-            <img src={family1} alt="family1" className=" max-w-[100%] "/>
-            <p>hjhjjh</p>
+            <img src={family1} alt="family1" className=" max-w-[100%]  lg:w-auto md:w-auto xsm:w-[20rem] sm:w-[10rem] rounded-lg"/>
+            <p className=" my-6 ">Citi mobile banking allows you to manage your money and pay friends — all while on-the-go. Member FDIC.</p>
             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold">
               Learn More
             </button>
           </div>
-          <div className="mb-8 w-[33%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center">
+          <div className="mb-8 lg:w-[33%] md:w-auto xsm:w-[20rem] sm:w-[10rem] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md  hover:bg-slate-300">
              <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Simplify your savings</p>
-            <img src={family2} alt="" className=" max-w-[100%] rounded-lg"/>
-            <p>hjhjjh</p>
+            <img src={family2} alt="" className=" max-w-[100%] lg:w-auto md:w-auto xsm:w-[20rem] sm:w-[10rem] rounded-lg"/>
+            <p className=" my-6 ">24/7 access to digital tools and money transfers with security you can bank on. Member FDIC</p>
             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold">
               Learn More
             </button>
           </div>
-          <div className="mb-8 xsm:w-[33%] sm:w-[80%] md:w-[33%] lg:w-[33%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center">
+          <div className="mb-8 lg:w-[33%] md:w-auto xsm:w-[20rem] sm:w-[10rem] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md hover:bg-slate-300 ">
              <p className=" font-bold text-blue-900 text-[.9rem] mb-4">Explore Citi® / AAdvantage® Credit Cards</p>
-            <img src={multicard} alt="" className=" max-w-[100%] rounded-lg"/>
-            <p>hjhjjh</p>
+            <img src={multicard} alt="" className=" max-w-[100%] lg:w-auto md:w-auto xsm:w-[20rem] sm:w-[10rem] rounded-lg"/>
+            <p className=" my-6 ">Whether you're a frequent flyer or first—time passenger, Citi has an airline rewards credit card to meet your travel needs.</p>
             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold">
               Learn More
             </button>
