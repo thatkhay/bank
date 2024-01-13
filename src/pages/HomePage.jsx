@@ -11,6 +11,7 @@ import secTwoImg from "../images/sectwo.jpg";
 import secThreeImg from "../images/secthree.jpg";
 import Form from "../components/Form";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 const HomePage = () => {
   return (
     <div className="container max-w-full flex items-center flex-col ">
@@ -229,6 +230,7 @@ const HomePage = () => {
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   );
 };
