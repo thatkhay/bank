@@ -15,7 +15,9 @@ const HomePage = () => {
   return (
     <div className="container max-w-full flex items-center flex-col ">
       <nav className=" max-w-full w-[90%] flex justify-between items-center  px-4  lg:bg-transparent md:bg-transparent xsm:bg-slate-100 sm:bg-slate-200   mt-2">
-        <img src={logo} alt="logo" />
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
         <ul className="flex justify-between  w-[10rem] ">
           <li className=" text-[.7rem] flex items-center flex-col xsm:hidden sm:hidden lg:flex md:flex">
             <img src={location} alt="location" />
@@ -139,12 +141,11 @@ const HomePage = () => {
               24/7 access to digital tools and money transfers with security you
               can bank on. Member FDIC
             </p>
-            <Link to='/*'>
-             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
-              Learn More
-            </button>
+            <Link to="/*">
+              <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
+                Learn More
+              </button>
             </Link>
-           
           </div>
           <div className="mb-8 lg:w-[33%] md:w-[90%] xsm:w-[95%] sm:w-[95%] flex flex-col lg:items-start md:items-center xsm:items-center sm:items-center lg:border-none md:border-2 xsm:border-2 sm:border-2 border-blue-900 p-6 rounded-md hover:bg-slate-300 ">
             <p className=" font-bold text-blue-900 text-[.9rem] mb-4">
@@ -159,10 +160,10 @@ const HomePage = () => {
               Whether you're a frequent flyer or first—time passenger, Citi has
               an airline rewards credit card to meet your travel needs.
             </p>
-            <Link to='/*'>
-             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
-              Learn More
-            </button>
+            <Link to="/*">
+              <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900">
+                Learn More
+              </button>
             </Link>
           </div>
         </div>
@@ -179,10 +180,10 @@ const HomePage = () => {
               These are some keys to help create equitable pathways to income
               growth.
             </p>
-            <Link to='/*' className="mt-4">
-             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
-              Learn More
-            </button>
+            <Link to="/*" className="mt-4">
+              <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
+                Learn More
+              </button>
             </Link>
           </div>
         </div>
@@ -198,10 +199,10 @@ const HomePage = () => {
               The higher your balances, the more benefits and services you can
               enjoy from Citi Relationship Tiers.
             </p>
-           <Link to='/*' className="mt-4">
-             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
-              Learn More
-            </button>
+            <Link to="/*" className="mt-4">
+              <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
+                Learn More
+              </button>
             </Link>
           </div>
           <img src={secTwoImg} alt="secTwoImg" className=" rounded-lg " />
@@ -220,10 +221,10 @@ const HomePage = () => {
               like never before to help communities of color build wealth and
               strong financial futures.
             </p>
-           <Link to='/*' className="mt-4">
-             <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
-              Learn More
-            </button>
+            <Link to="/*" className="mt-4">
+              <button className="h-[3rem] w-[12rem] bg-blue-500  rounded-[.6rem] text-white font-bold hover:bg-blue-900 mt-6">
+                Learn More
+              </button>
             </Link>
           </div>
         </div>

@@ -4,7 +4,9 @@ import logo from "../images/citi-logo.svg";
 const SignUp = () => {
   return (
     <div className="container max-w-full flex items-center justify-center flex-col p-10 h-[95vh]">
-         <img src={logo} alt="logo" />
+         <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
       <form className="max-w-[50rem] sm:w-[100%] xsm:w-[100%] lg:w-[50%] md:w-[80%]  p-4 lg:items-start md:items-start xsm:items-center sm:items-center border-2 border-blue-900 rounded-lg">
         <div className="flex items-center justify-between xsm:flex-col sm:flex-col md:flex-row lg:flex-row ">
           <div className="flex flex-col mr-2">
