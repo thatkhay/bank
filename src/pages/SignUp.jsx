@@ -1,21 +1,27 @@
 // SignUp.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/citi-logo.svg";
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
-import { app } from '../firebaseConfig';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+} from "firebase/auth";
+import { app } from "../firebaseConfig";
 
 const SignUp = () => {
   const auth = getAuth(app);
+  const navigate = useNavigate();
+  const [signupSuccess, setSignupSuccess] = useState(false);
 
   const [formData, setFormData] = useState({
-    displayName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    displayName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
-  const [passwordError, setPasswordError] = useState('');
+  const [passwordError, setPasswordError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,8 +31,8 @@ const SignUp = () => {
     });
 
     // Clear password error when changing password or confirmPassword
-    if (name === 'password' || name === 'confirmPassword') {
-      setPasswordError('');
+    if (name === "password" || name === "confirmPassword") {
+      setPasswordError("");
     }
   };
 
@@ -35,13 +41,13 @@ const SignUp = () => {
 
     // Validate password
     if (formData.password.length < 6) {
-      setPasswordError('Password must be at least 6 characters long');
+      setPasswordError("Password must be at least 6 characters long");
       return;
     }
 
     // Check if passwords match
     if (formData.password !== formData.confirmPassword) {
-      setPasswordError('Passwords do not match');
+      setPasswordError("Passwords do not match");
       return;
     }
 
@@ -54,15 +60,18 @@ const SignUp = () => {
 
       // Access the user information if needed
       const user = userCredential.user;
-      
+
       // Set display name
       await updateProfile(user, {
         displayName: formData.displayName,
       });
 
-      console.log('User created:', user);
+      setSignupSuccess(true);
+      navigate("/log-in");
+
+      console.log("User created:", user);
     } catch (error) {
-      console.error('Error creating user:', error.message);
+      console.error("Error creating user:", error.message);
     }
   };
 
@@ -124,7 +133,14 @@ const SignUp = () => {
           <input type="checkbox" className=" h-6 w-6 mr-2 " />
           <p className=" text-[.8rem] ">Remember User ID</p>
         </div>
-        {passwordError && <p className="text-red-500 text-sm mt-2">{passwordError}</p>}
+        {passwordError && (
+          <p className="text-red-500 text-sm mt-2">{passwordError}</p>
+        )}
+        {signupSuccess && (
+          <p className="text-green-500 text-sm mt-2">
+            Sign up successful! Please login.
+          </p>
+        )}
         <button
           onClick={handleSubmit}
           className=" w-[100%] items-center justify-center h-[3rem] bg-blue-500  rounded-[.6rem] text-white font-bold mt-6 hover:bg-blue-900"
@@ -132,10 +148,15 @@ const SignUp = () => {
           Sign Up
         </button>
         <p className="text-[.8rem] text-center mt-4">
-          Have an account ? <Link to='/log-in' className=' text-blue-600 '>Login</Link>
+          Have an account ?{" "}
+          <Link to="/log-in" className=" text-blue-600 ">
+            Login
+          </Link>
         </p>
       </form>
-      <Link to='/' className=" flex  text-blue-600 mt-4 ">Home {'>'}</Link>
+      <Link to="/" className=" flex  text-blue-600 mt-4 ">
+        Home {">"}
+      </Link>
     </div>
   );
 };
