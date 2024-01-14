@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../images/citi-logo.svg";
 import { Link } from "react-router-dom";
 import AddCardIcon from '@mui/icons-material/AddCard';
 import SendIcon from '@mui/icons-material/Send';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const UserTransactionPage = () => {
+  const [userName, setUserName] = useState('');
+  
+  // Assume you have the authenticated user from Firebase after login
+  const auth = getAuth();
+  const user = auth.currentUser;
 
+  useEffect(() => {
+    if (user) {
+      // Use the onAuthStateChanged function to get the user's display name
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUserName(user.displayName || ''); // Set the display name in the state
+        }
+      });
+    }
+  }, [user, auth]);
 
   return (
     <div className="container max-w-full flex items-center flex-col">
@@ -14,7 +30,7 @@ const UserTransactionPage = () => {
       </Link>
       <div className="flex items-center justify-between lg:w-[80%] md:w-[90%] xsm:w-[90%] sm:w-[90%] p-6 mt-4">
         <h5 className=" font-extrabold text-[1.5rem] text-blue-900">
-          Hello Joe
+          Hello {userName}
         </h5>
 
         <div className="h-[3rem] w-[3rem] border-2 border-blue-900 rounded-[50%] ">
@@ -32,8 +48,7 @@ const UserTransactionPage = () => {
           Add Funds <AddCardIcon/>
         </div>
         <div className="flex items-center justify-around h-[3rem] w-[10rem] bg-green-400 rounded-md">
-          Transfer Funds
-          <SendIcon/>
+          Transfer Funds <SendIcon/>
         </div>
       </div>
       <div className="w-[90%] h-[10rem] border-2 rounded-md mt-4 ">

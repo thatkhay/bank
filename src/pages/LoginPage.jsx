@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/citi-logo.svg";
 
 import { app } from "../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-const LoginPage = () => {
+const LoginPage = ({ onLogin }) => {
   const auth = getAuth(app);
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -29,6 +30,8 @@ const LoginPage = () => {
     try {
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       console.log('User logged in successfully');
+      onLogin(); // Notify the parent component that login is successful
+      navigate('/transaction'); // Redirect to the transaction page upon successful login
     } catch (error) {
       console.error('Error logging in:', error.message);
       setError('Invalid email or password');

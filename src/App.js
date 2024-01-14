@@ -1,25 +1,43 @@
-// App.js
-
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-import './index.css'
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUp from './pages/SignUp';
-import NotFounfPage from './pages/NotFounfPage';
+import NotFoundPage from './pages/NotFounfPage';
 import UserTransactionPage from './pages/UserTransactionPage';
 
-
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={ <HomePage/> } />
-        <Route path="/log-in" element={ <LoginPage/> } />
-        <Route path="/sign-up" element={ <SignUp/> } />
-        <Route path="/*" element={ <NotFounfPage/> } />
-        <Route path="/transaction" element={ <UserTransactionPage/> } />
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/log-in"
+          element={<LoginPage onLogin={handleLogin} />}
+        />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route
+          path="/transaction"
+          element={
+            isAuthenticated ? (
+              <UserTransactionPage onLogout={handleLogout} />
+            ) : (
+              // Redirect to login page if not authenticated
+              <LoginPage onLogin={handleLogin} />
+            )
+          }
+        />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
