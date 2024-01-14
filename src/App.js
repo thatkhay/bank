@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUp from './pages/SignUp';
 import NotFounfPage from './pages/NotFounfPage';
+import UserTransactionPage from './pages/UserTransactionPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/log-in" element={ <LoginPage/> } />
         <Route path="/sign-up" element={ <SignUp/> } />
         <Route path="/*" element={ <NotFounfPage/> } />
+        <Route path="/transaction" element={ <UserTransactionPage/> } />
       </Routes>
     </Router>
   );
