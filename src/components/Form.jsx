@@ -10,8 +10,6 @@ const LoginForm = () => {
     password: '',
   });
 
-  const [error, setError] = useState('');
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -33,7 +31,6 @@ const LoginForm = () => {
       console.log('User logged in successfully');
     } catch (error) {
       console.error('Error logging in:', error.message);
-      setError('Invalid email or password');
     }
   };
 
@@ -66,7 +63,6 @@ const LoginForm = () => {
           />
         </div>
       </div>
-      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       <div className="flex items-center mt-2">
         <input type="checkbox" className="h-6 w-6 mr-2" />
         <p className="text-[.8rem]">Remember User ID</p>
