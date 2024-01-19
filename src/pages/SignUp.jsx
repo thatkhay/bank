@@ -13,12 +13,14 @@ const SignUp = () => {
   const auth = getAuth(app);
   const navigate = useNavigate();
   const [signupSuccess, setSignupSuccess] = useState(false);
+  
 
   const [formData, setFormData] = useState({
     displayName: "",
     email: "",
     password: "",
     confirmPassword: "",
+    displayNumber: "",
   });
 
   const [passwordError, setPasswordError] = useState("");
@@ -128,6 +130,17 @@ const SignUp = () => {
               className="h-[3rem] w-[16rem] border-[.04px] border-gray-400 px-2 rounded-md mb-4 "
             />
           </div>
+          <div className="flex flex-col">
+        <label htmlFor="displayNumber">Display Number</label>
+        <input
+          type="text"
+          name="displayNumber"
+          placeholder="12345"
+          value={formData.displayNumber}
+          onChange={handleChange}
+          className="h-[3rem] w-[16rem] border-[.04px] border-gray-400 px-2 rounded-md mb-4"
+        />
+      </div>
         </div>
         <div className="flex items-center mt-2">
           <input type="checkbox" className=" h-6 w-6 mr-2 " />
