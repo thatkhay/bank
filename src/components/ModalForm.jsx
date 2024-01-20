@@ -55,7 +55,7 @@ const ModalForm = ({ showModal, closeModal }) => {
               name="accName"
               value={formData.field1}
               onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full capitalize"
             />
           </div>
           <div className="mb-4">
@@ -71,7 +71,7 @@ const ModalForm = ({ showModal, closeModal }) => {
               name="recipentName"
               value={formData.field1}
               onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full capitalize"
             />
           </div>
           <div className="mb-4">
@@ -83,11 +83,11 @@ const ModalForm = ({ showModal, closeModal }) => {
             </label>
             <input
               type="number"
-              id="routingNo"
+              id="routingNo" capitalize
               name="routingNo"
               value={formData.field1}
               onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full capitalize"
             />
           </div>
           <div className="mb-4">
@@ -103,7 +103,7 @@ const ModalForm = ({ showModal, closeModal }) => {
               name="accNo"
               value={formData.field1}
               onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full capitalize"
             />
           </div>
           {/* Repeat the above block for the remaining fields (field2 to field5) */}
