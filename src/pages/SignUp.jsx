@@ -7,13 +7,14 @@ import {
   getAuth,
   updateProfile,
 } from "firebase/auth";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { app } from "../firebaseConfig";
 
 const SignUp = () => {
   const auth = getAuth(app);
+  const firestore = getFirestore(app);
   const navigate = useNavigate();
   const [signupSuccess, setSignupSuccess] = useState(false);
-  
 
   const [formData, setFormData] = useState({
     displayName: "",
@@ -66,6 +67,11 @@ const SignUp = () => {
       // Set display name
       await updateProfile(user, {
         displayName: formData.displayName,
+      });
+
+      // Save displayNumber to Firestore
+      await setDoc(doc(firestore, "users", user.uid), {
+        displayNumber: formData.displayNumber,
       });
 
       setSignupSuccess(true);
@@ -133,7 +139,7 @@ const SignUp = () => {
           <div className="flex flex-col">
         <label htmlFor="displayNumber">Display Number</label>
         <input
-          type="text"
+          type="number"
           name="displayNumber"
           placeholder="12345"
           value={formData.displayNumber}
