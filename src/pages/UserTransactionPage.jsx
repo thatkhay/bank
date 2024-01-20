@@ -63,14 +63,14 @@ const UserTransactionPage = () => {
       <div className="lg:w-[50%] md:w-[70%] sm:w-[80%] xsm:w-[80%] h-[10rem] bg-blue-600 px-20 py-10 flex flex-col items-center justify-center gap-2 rounded-lg mt-6">
         <p className="font-semibold text-slate-400">Total Savings</p>
         <div className="flex items-center ">
-          <p className="text-[2rem] text-white tracking-wider font-semibold">
-            <div className="ml-[2rem]">
+          <p className="text-[2rem] text-white tracking-wider font-semibold mr-[1rem]">
+            <span className="ml-[1rem]">
               {visible
                 ? // Display the number if visible is true
                   `$${displayNumber}`
                 : // Display asterisks if visible is false
                   "********"}
-            </div>
+            </span>
           </p>
           {visible ? (
             // Show the eye icon if visible is true
