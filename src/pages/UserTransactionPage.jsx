@@ -10,7 +10,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 
 const UserTransactionPage = () => {
   const [userName, setUserName] = useState("");
-  const [displayNumber, setDisplayNumber] = useState(null);
+  const [displayNumber, setDisplayNumber] = useState('000000');
   const [visible, setVisible] = useState(true);
   const auth = getAuth();
   const firestore = getFirestore();
