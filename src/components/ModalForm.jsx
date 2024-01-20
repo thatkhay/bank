@@ -4,11 +4,10 @@ import React, { useState } from "react";
 
 const ModalForm = ({ showModal, closeModal }) => {
   const [formData, setFormData] = useState({
-    field1: "",
-    field2: "",
-    field3: "",
-    field4: "",
-    field5: "",
+    accName: "",
+    recipentName: "",
+    accNo: "",
+    routingNo: "",
   });
 
   const handleChange = (e) => {
@@ -25,11 +24,10 @@ const ModalForm = ({ showModal, closeModal }) => {
     console.log("Form submitted:", formData);
     // Reset the form after submission
     setFormData({
-      field1: "",
-      field2: "",
-      field3: "",
-      field4: "",
-      field5: "",
+      accName: "",
+      recipentName: "",
+      accNo: "",
+      routingNo: "",
     });
     // Close the modal
     closeModal();
@@ -45,13 +43,64 @@ const ModalForm = ({ showModal, closeModal }) => {
         <h2 className="text-2xl font-bold mb-4">Modal Form</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="field1" className="block text-sm font-medium text-gray-700">
-              Field 1
+            <label
+              htmlFor="accName"
+              className="block text-sm font-medium text-gray-700"
+            >
+             Account Name
             </label>
             <input
               type="text"
-              id="field1"
-              name="field1"
+              id="accName"
+              name="accName"
+              value={formData.field1}
+              onChange={handleChange}
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="recipentName"
+              className="block text-sm font-medium text-gray-700"
+            >
+             Recipent Name
+            </label>
+            <input
+              type="text"
+              id="recipentName"
+              name="recipentName"
+              value={formData.field1}
+              onChange={handleChange}
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="routingNo"
+              className="block text-sm font-medium text-gray-700"
+            >
+             Routing Number
+            </label>
+            <input
+              type="number"
+              id="routingNo"
+              name="routingNo"
+              value={formData.field1}
+              onChange={handleChange}
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="accNo"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Account Number
+            </label>
+            <input
+              type="number"
+              id="accNo"
+              name="accNo"
               value={formData.field1}
               onChange={handleChange}
               className="mt-1 p-2 border border-gray-300 rounded-md w-full"
