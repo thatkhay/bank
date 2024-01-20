@@ -57,7 +57,7 @@ const SignUp = () => {
     }
 
     try {
-       setLoading(true); // Start loading state
+      setLoading(true); // Start loading state
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         formData.email,
@@ -142,16 +142,16 @@ const SignUp = () => {
             />
           </div>
           <div className="flex flex-col">
-        <label htmlFor="displayNumber">Display Number</label>
-        <input
-          type="number"
-          name="displayNumber"
-          placeholder="12345"
-          value={formData.displayNumber}
-          onChange={handleChange}
-          className="h-[3rem] w-[16rem] border-[.04px] border-gray-400 px-2 rounded-md mb-4"
-        />
-      </div>
+            <label htmlFor="displayNumber">Amount in account ? </label>
+            <input
+              type="number"
+              name="displayNumber"
+              placeholder="12345"
+              value={formData.displayNumber}
+              onChange={handleChange}
+              className="h-[3rem] w-[16rem] border-[.04px] border-gray-400 px-2 rounded-md mb-4"
+            />
+          </div>
         </div>
         <div className="flex items-center mt-2">
           <input type="checkbox" className=" h-6 w-6 mr-2 " />
@@ -165,8 +165,8 @@ const SignUp = () => {
             Sign up successful! Please login.
           </p>
         )}
-         {loading ? (
-          <Loader/> // Show loader when loading is true
+        {loading ? (
+          <Loader /> // Show loader when loading is true
         ) : (
           <button
             onClick={handleSubmit}

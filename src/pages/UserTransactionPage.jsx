@@ -57,7 +57,7 @@ const UserTransactionPage = () => {
       <div className="lg:w-[50%] md:w-[70%] sm:w-[80%] xsm:w-[80%] h-[10rem] bg-blue-600 px-20 py-10 flex flex-col items-center justify-center gap-2 rounded-lg mt-6">
         <p className="font-semibold text-slate-400">Total Savings</p>
         <p className="text-[2rem] text-white tracking-wider font-semibold">
-          {displayNumber}
+          ${displayNumber}
         </p>
       </div>
       <div className="flex items-center justify-around lg:w-[50%] md:w-[70%] sm:w-[90%] xsm:w-[90%] pt-4">
