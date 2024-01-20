@@ -4,11 +4,12 @@ import logo from "../images/citi-logo.svg";
 
 import { app } from "../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import Loader from "../components/Loader";
 
 const LoginPage = ({ onLogin }) => {
   const auth = getAuth(app);
   const navigate = useNavigate();
-
+ const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -28,6 +29,7 @@ const LoginPage = ({ onLogin }) => {
     e.preventDefault();
     console.log('Email:', formData.email); // Log the email
     try {
+      setLoading(true)
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       console.log('User logged in successfully');
       onLogin(); // Notify the parent component that login is successful
@@ -35,6 +37,8 @@ const LoginPage = ({ onLogin }) => {
     } catch (error) {
       console.error('Error logging in:', error.message);
       setError('Invalid email or password');
+    }  finally {
+      setLoading(false); // Stop loading state
     }
   };
 
@@ -76,9 +80,16 @@ const LoginPage = ({ onLogin }) => {
           <input type="checkbox" className=" h-6 w-6 mr-2 " />
           <p className=" text-[.8rem] ">Remember User ID</p>
         </div>
-        <button className=" w-[100%] items-center justify-center h-[3rem] bg-blue-500  rounded-[.6rem] text-white font-bold mt-6 hover:bg-blue-900">
-          Sign In
-        </button>
+       {loading ? (
+          <Loader/> // Show loader when loading is true
+        ) : (
+          <button
+            onClick={handleSubmit}
+            className="w-[100%] items-center justify-center h-[3rem] bg-blue-500 rounded-[.6rem] text-white font-bold mt-6 hover:bg-blue-900"
+          >
+            Sign In
+          </button>
+        )}
         <p className="text-[.8rem] text-center mt-4">
           {" "}
           Dont have an account ?{" "}

@@ -9,12 +9,14 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { app } from "../firebaseConfig";
+import Loader from "../components/Loader";
 
 const SignUp = () => {
   const auth = getAuth(app);
   const firestore = getFirestore(app);
   const navigate = useNavigate();
   const [signupSuccess, setSignupSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     displayName: "",
@@ -55,6 +57,7 @@ const SignUp = () => {
     }
 
     try {
+       setLoading(true); // Start loading state
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         formData.email,
@@ -80,6 +83,8 @@ const SignUp = () => {
       console.log("User created:", user);
     } catch (error) {
       console.error("Error creating user:", error.message);
+    } finally {
+      setLoading(false); // Stop loading state
     }
   };
 
@@ -160,12 +165,16 @@ const SignUp = () => {
             Sign up successful! Please login.
           </p>
         )}
-        <button
-          onClick={handleSubmit}
-          className=" w-[100%] items-center justify-center h-[3rem] bg-blue-500  rounded-[.6rem] text-white font-bold mt-6 hover:bg-blue-900"
-        >
-          Sign Up
-        </button>
+         {loading ? (
+          <Loader/> // Show loader when loading is true
+        ) : (
+          <button
+            onClick={handleSubmit}
+            className="w-[100%] items-center justify-center h-[3rem] bg-blue-500 rounded-[.6rem] text-white font-bold mt-6 hover:bg-blue-900"
+          >
+            Sign Up
+          </button>
+        )}
         <p className="text-[.8rem] text-center mt-4">
           Have an account ?{" "}
           <Link to="/log-in" className=" text-blue-600 ">
