@@ -131,7 +131,7 @@ const ModalForm = ({ showModal, closeModal }) => {
               Routing Number
             </label>
             <input
-              type="text"
+              type="number"
               id="routingNo"
               name="routingNo"
               value={formData.routingNo}
@@ -148,7 +148,7 @@ const ModalForm = ({ showModal, closeModal }) => {
               Account Number
             </label>
             <input
-              type="text"
+              type="number"
               id="accNo"
               name="accNo"
               value={formData.accNo}
