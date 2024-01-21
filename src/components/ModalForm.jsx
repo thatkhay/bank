@@ -2,14 +2,32 @@ import React, { useState } from "react";
 import logo from "../images/citi-logo.svg";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateDoc, doc } from "firebase/firestore";
+import { getAuth } from "firebase/auth"; // Add import for getAuth
+import { getFirestore } from "firebase/firestore"; // Add import for getFirestore
 
-const ModalForm = ({ showModal, closeModal }) => {
+const updateDisplayNumber = async (newDisplayNumber) => {
+  try {
+    const auth = getAuth(); // Get auth instance
+    const firestore = getFirestore(); // Get firestore instance
+
+    const user = auth.currentUser;
+    const userDocRef = doc(firestore, "users", user.uid);
+    await updateDoc(userDocRef, {
+      displayNumber: newDisplayNumber,
+    });
+  } catch (error) {
+    console.error("Error updating display number:", error.message);
+  }
+};
+
+const ModalForm = ({ showModal, closeModal, displayNumber, setDisplayNumber }) => {
   const [formData, setFormData] = useState({
     accName: "",
     recipentName: "",
     accNo: "",
     routingNo: "",
-     amount: "",
+    amount: "",
   });
 
   const [errors, setErrors] = useState({
@@ -17,7 +35,7 @@ const ModalForm = ({ showModal, closeModal }) => {
     recipentName: "",
     accNo: "",
     routingNo: "",
-     amount: "",
+    amount: "",
   });
 
   const handleChange = (e) => {
@@ -33,7 +51,7 @@ const ModalForm = ({ showModal, closeModal }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Check for all inputs filled
     const requiredFields = ["accName", "recipentName", "accNo", "routingNo"];
@@ -76,33 +94,41 @@ const ModalForm = ({ showModal, closeModal }) => {
     }
 
     if (!hasErrors) {
-      // Add your form submission logic here
-      console.log("Form submitted:", formData);
+      try {
+        // Subtract the amount from the current display number
+        const newDisplayNumber = parseFloat(displayNumber) - parseFloat(formData.amount);
+        setDisplayNumber(newDisplayNumber); // Update the display number in the component state
+        await updateDisplayNumber(newDisplayNumber); // Update the display number in Firestore
 
-      toast.success('Transfer successfull!', {
-      position: 'top-right',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    });
+        toast.success('Transfer successful!', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
 
-      // Reset the form after submission
-      setFormData({
-        accName: "",
-        recipentName: "",
-        accNo: "",
-        routingNo: "",
-        amount: "",
-      });
-      // Close the modal
-      closeModal();
+        // Reset the form after submission
+        setFormData({
+          accName: "",
+          recipentName: "",
+          accNo: "",
+          routingNo: "",
+          amount: "",
+        });
+        // Close the modal
+        closeModal();
+      } catch (error) {
+        console.error("Error processing transaction:", error.message);
+      }
     }
   };
+
   const handleClose = (e) => {
     closeModal();
   };
+
   return (
     <div
       className={`${

@@ -11,11 +11,10 @@ import ModalForm from "../components/ModalForm";
 
 const UserTransactionPage = () => {
   const [userName, setUserName] = useState("");
-  const [displayNumber, setDisplayNumber] = useState('000000');
+  const [displayNumber, setDisplayNumber] = useState("000000");
   const [visible, setVisible] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  
   const openModal = () => {
     setShowModal(true);
   };
@@ -95,14 +94,22 @@ const UserTransactionPage = () => {
       </div>
       <div className="flex items-center justify-around lg:w-[50%] md:w-[70%] sm:w-[90%] xsm:w-[90%] pt-4">
         <div className="flex items-center justify-around h-[3rem] w-[10rem] bg-blue-400 rounded-md">
-          Add Funds <AddCardIcon  />
+          Add Funds <AddCardIcon />
         </div>
-        <div className="flex items-center justify-around h-[3rem] w-[10rem] bg-green-400 rounded-md" onClick={openModal}>
+        <div
+          className="flex items-center justify-around h-[3rem] w-[10rem] bg-green-400 rounded-md"
+          onClick={openModal}
+        >
           Transfer Funds <SendIcon />
         </div>
       </div>
       <div className="w-[90%] h-[10rem] border-2 rounded-md mt-4"></div>
-      <ModalForm showModal={showModal} closeModal={closeModal}/>
+      <ModalForm
+        showModal={showModal}
+        closeModal={closeModal}
+        displayNumber={displayNumber} // Ensure this line is present
+        setDisplayNumber={setDisplayNumber}
+      />
     </div>
   );
 };
