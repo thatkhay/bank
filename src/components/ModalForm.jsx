@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import logo from "../images/citi-logo.svg";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ModalForm = ({ showModal, closeModal }) => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,7 @@ const ModalForm = ({ showModal, closeModal }) => {
     recipentName: "",
     accNo: "",
     routingNo: "",
+     amount: "",
   });
 
   const [errors, setErrors] = useState({
@@ -14,6 +17,7 @@ const ModalForm = ({ showModal, closeModal }) => {
     recipentName: "",
     accNo: "",
     routingNo: "",
+     amount: "",
   });
 
   const handleChange = (e) => {
@@ -54,6 +58,14 @@ const ModalForm = ({ showModal, closeModal }) => {
       hasErrors = true;
     }
 
+    if (formData.amount.length < 1) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        amount: "Input amount",
+      }));
+      hasErrors = true;
+    }
+
     // Check for the length of routingNo
     if (formData.routingNo.length !== 9) {
       setErrors((prevErrors) => ({
@@ -66,12 +78,23 @@ const ModalForm = ({ showModal, closeModal }) => {
     if (!hasErrors) {
       // Add your form submission logic here
       console.log("Form submitted:", formData);
+
+      toast.success('Transfer successfull!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+
       // Reset the form after submission
       setFormData({
         accName: "",
         recipentName: "",
         accNo: "",
         routingNo: "",
+        amount: "",
       });
       // Close the modal
       closeModal();
@@ -156,6 +179,24 @@ const ModalForm = ({ showModal, closeModal }) => {
               className="mt-1 p-2 border border-gray-300 rounded-md w-full capitalize"
             />
             <p className="text-red-500">{errors.accNo}</p>
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="amount"
+              className="block text-sm font-medium text-gray-700"
+            >
+             Amount
+            </label>
+            <input
+              type="number"
+              id="amount"
+              placeholder="$ 0.00"
+              name="amount"
+              value={formData.amount}
+              onChange={handleChange}
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full capitalize"
+            />
+            <p className="text-red-500">{errors.amount}</p>
           </div>
           <div className="mt-4 flex justify-between">
             <button

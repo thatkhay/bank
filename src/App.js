@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import SignUp from './pages/SignUp';
-import NotFoundPage from './pages/NotFounfPage';
-import UserTransactionPage from './pages/UserTransactionPage';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import SignUp from "./pages/SignUp";
+import NotFoundPage from "./pages/NotFounfPage";
+import UserTransactionPage from "./pages/UserTransactionPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -21,10 +23,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
-          path="/log-in"
-          element={<LoginPage onLogin={handleLogin} />}
-        />
+        <Route path="/log-in" element={<LoginPage onLogin={handleLogin} />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route
           path="/transaction"
@@ -39,6 +38,7 @@ function App() {
         />
         <Route path="/*" element={<NotFoundPage />} />
       </Routes>
+      <ToastContainer />
     </Router>
   );
 }
